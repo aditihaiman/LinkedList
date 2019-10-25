@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "headers.h"
 
 struct node {
     int i;
@@ -22,8 +23,15 @@ struct node * insert_front(struct node *current, int val){
     return &new;
 }
 
+//struct node * remove(struct node *front, int data);
+
 struct node * free_list(struct node *current) {
     
+    
+}
+
+struct node * newList(){
+    struct node *nl = malloc(sizeof(struct node));
     
 }
 
@@ -45,3 +53,4 @@ int main() {
 
     
 }
+
