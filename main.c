@@ -4,28 +4,35 @@
 
 
 int main() {
-    struct node test;
-    test.i = 0;
-    test.next = NULL;
+    struct node *front = NULL;
     
-    //printf("%p", test.next);
-    
-    struct node *lst = NULL;
-        
-    //printf("%d\n", test.i);
-    //print_list(lst);
-    
-    lst = insert_front(lst, 0);
-    //print_list(lst);
-
-    lst = insert_front(lst, 1);
-    
-//    printf("lst[0]: %d\n", lst->i);
-//    printf("lst[1]: %d\n", lst->next->i);
-//    printf("lst[2]: %p\n", lst->next->next);
+    printf("Testing print empty list: \n");
+    print_list(front);
 
     
-    print_list(lst);
+    printf("\nAdding 0-9 to list: \n");
+    for(int x = 0; x < 10; x++){
+        front = insert_front(front,x);
+    }
+    print_list(front);
+    
+    printf("\nTesting remove(9): \n");
+    front = remove_val(front, 9);
+    print_list(front);
+    
+    printf("\nTesting remove(0): \n");
+    front = remove_val(front, 0);
+    print_list(front);
+   
+    printf("\nTesting remove(10): \n");
+    front = remove_val(front, 10);
+    print_list(front);
+    
+    printf("\nRemoving all values from list: \n");
+    for(int x = 0; x < 9; x++){
+        front = remove_val(front, x);
+    }
+    print_list(front);
 
 
     
