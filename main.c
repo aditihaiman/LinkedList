@@ -23,6 +23,10 @@ int main() {
     printf("\nTesting remove(0): \n");
     front = remove_val(front, 0);
     print_list(front);
+    
+    printf("\nTesting remove(5): \n");
+    front = remove_val(front, 5);
+    print_list(front);
    
     printf("\nTesting remove(10): \n");
     front = remove_val(front, 10);
@@ -33,6 +37,8 @@ int main() {
         front = remove_val(front, x);
     }
     print_list(front);
+    
+    
 
 
     

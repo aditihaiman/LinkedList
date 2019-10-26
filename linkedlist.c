@@ -23,8 +23,8 @@ struct node * insert_front(struct node *front, int val){
 
 struct node * remove_val(struct node *front, int data){
     struct node *current = front;
+    struct node *prev = current;
     while(current != NULL){
-        struct node *prev = current;
         if(current->i == data){
             if(current == front) front = front->next;
             else prev->next = current->next;
@@ -37,7 +37,15 @@ struct node * remove_val(struct node *front, int data){
 }
 
 struct node * free_list(struct node *current) {
-    
+    struct node *front = current;
+    struct node* prev = current;
+    while(current != NULL) {
+        prev = current;
+        current = current->next;
+        free(prev);
+        prev = NULL;
+    }
+    return front;
     
 }
 
