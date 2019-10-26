@@ -37,27 +37,14 @@ struct node * remove_val(struct node *front, int data){
 }
 
 struct node * free_list(struct node *current) {
-    struct node *front = current;
-    struct node* prev = current;
+    struct node* prev;
     while(current != NULL) {
+        printf("freeing: %d\n", current->i);
         prev = current;
         current = current->next;
         free(prev);
         prev = NULL;
     }
-    return front;
-    
+    return prev;
 }
 
-//int main() {
-//    struct node *front;
-//
-//    print_list(front);
-//
-//    insert_front(front, 1);
-//
-//    print_list(front);
-//
-//
-//
-//}

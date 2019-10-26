@@ -38,8 +38,14 @@ int main() {
     }
     print_list(front);
     
-    
+    printf("\nAdding back 0-9 to list: \n");
+     for(int x = 0; x < 10; x++){
+         front = insert_front(front,x);
+     }
+     print_list(front);
 
+    printf("\nTesting free(list): \n");
+    front = free_list(front);
+    print_list(front);
 
-    
 }
