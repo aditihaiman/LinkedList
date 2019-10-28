@@ -28,6 +28,8 @@ struct node * remove_val(struct node *front, int data){
         if(current->i == data){
             if(current == front) front = front->next;
             else prev->next = current->next;
+            free(current);
+            current = NULL;
             return front;
         }
         prev = current;
